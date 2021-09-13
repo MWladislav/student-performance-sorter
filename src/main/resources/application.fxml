@@ -1,0 +1,24 @@
+<?import javafx.collections.FXCollections?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.GridPane?>
+<?import java.lang.String?>
+<GridPane fx:controller="com.example.sorter.controller.ApplicationController"
+          xmlns:fx="http://javafx.com/fxml" alignment="center" hgap="10" vgap="10">
+
+    <Button GridPane.columnIndex="0" GridPane.columnSpan="1" onAction="#fileOpen" fx:id="openFile" text="Choose file"/>
+    <ComboBox GridPane.columnIndex="1" GridPane.columnSpan="1" fx:id="sortingAlgsComboBox">
+        <items>
+            <FXCollections fx:factory="observableArrayList">
+                <String fx:value="Bubble" />
+                <String fx:value="Merge" />
+                <String fx:value="Heap" />
+            </FXCollections>
+        </items>
+    </ComboBox>
+    <Button GridPane.columnIndex="2" GridPane.columnSpan="1" onAction="#sortStudents" fx:id="sortStudents" text="Sort"/>
+    <Button GridPane.columnIndex="3" GridPane.columnSpan="1" onAction="#saveResults" fx:id="saveToFile"
+            visible="false" text="Save results"/>
+    <TableView GridPane.rowIndex="1" GridPane.columnSpan="4" fx:id="resultTable" visible="false"/>
+</GridPane>
